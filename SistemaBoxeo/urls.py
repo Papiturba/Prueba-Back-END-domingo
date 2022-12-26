@@ -16,22 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Boxeo import views
+from api import views
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
-    path('boxeadores/', views.listadoBoxeadores),
-    path('agregarBoxeador/', views.agregarBoxeador),
-    path('eliminarBoxeador/<int:id>', views.eliminarBoxeador),
-    path('actualizarBoxeador/<int:id>', views.actualizarBoxeador),
-    path('torneos/', views.listadoTorneos),
-    path('agregarTorneo/', views.agregarTorneo),
-    path('eliminarTorneo/<int:id>',views.eliminarTorneo),
-    path('actualizarTorneo/<int:id>', views.actualizarTorneo),
-    path('teams/', views.listadoTeams),
-    path('agregarTeam/', views.agregarTeam),
-    path('eliminarTeam/<int:id>',views.eliminarTeam),
-    path('actualizarTeam/<int:id>', views.actualizarTeam),
+    path('boxeador/', views.Boxeador_list.as_view()),
+    path('boxeador/<int:pk>', views.Boxeador_detail.as_view()),
+    path('torneo/', views.Torneo_list.as_view()),
+    path('torneo/<int:pk>', views.Torneo_detail.as_view()),
+    path('team/', views.Team_list.as_view()),
+    path('team/<int:pk>', views.Team_detail.as_view()),
 ]

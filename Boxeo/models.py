@@ -11,11 +11,14 @@ class Boxeador(models.Model):
     cinturones = models.IntegerField()
     ko = models.IntegerField()
 
-def mostrar_boxeador(self):
-    return "{}".format(self.nombre)
+    def mostrar_boxeador(self):
+        return "{}".format(self.nombre)
 
-def __str__(self):
-    return self.mostrar_boxeador()
+    def __str__(self):
+        return self.mostrar_boxeador()
+    
+
+  
 
 
 
@@ -29,11 +32,18 @@ class Team(models.Model):
     lesionados = models.CharField(max_length=15)
     boxeador = models.ForeignKey(Boxeador,null=True,blank=True, on_delete=models.CASCADE)  
 
-def mostrar_team(self):
-    return "{}".format(self.nombre)
+    def mostrar_team(self):
+        return "{}".format(self.nombre)
 
-def __str__(self):
-    return self.mostrar_team()
+    def __str__(self):
+        return self.mostrar_team()
+
+    
+
+    
+
+    
+    
 
 
 ##Clase Torneo
@@ -47,3 +57,9 @@ class Torneo(models.Model):
     fecha = models.DateField()
     inscripcion = models.CharField(max_length=20)
     inscritos = models.ForeignKey(Team,null=True,blank=True, on_delete=models.CASCADE) 
+
+    def mostrar_torneo(self):
+        return "{}".format(self.nombre)
+
+    def __str__(self):
+        return self.mostrar_torneo()

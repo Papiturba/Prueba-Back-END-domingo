@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Boxeo'
+    'Boxeo',
+    'rest_framework',
+    'api'
 ]
 
 MIDDLEWARE = [
